@@ -15,7 +15,4 @@ minus.addEventListener("click", () => {
         counter--;
         result.innerText = counter;
     }
-    else{
-        minus.style.background = " rgb(228, 160, 160)";
-    }
 });

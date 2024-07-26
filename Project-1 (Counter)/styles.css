@@ -40,3 +40,28 @@ button{
 .dec{
     background-color: rgb(241, 82, 82);
 }
+
+@media (max-width: 1080px) and (max-height: 2460px)
+{
+    div{
+        flex-direction: column;
+        row-gap: 15%;
+        
+    }
+    
+    p{
+        width: 50%;
+        height: 22%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 350px;
+    }
+
+    button{
+        width: 35%;
+        height: 8%;
+        font-size: 120px;
+        border-radius: 50px;
+    }
+}
