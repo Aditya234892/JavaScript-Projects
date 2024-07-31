@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            overflow: hidden;
+        }
+
+        section{
+            background-color: rgb(149, 243, 149);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 6%;
+        }
+
+        .container_div{
+            background-color: white;
+            width: 500px;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 13%;
+            box-shadow: 0px 0px 51px -5px rgba(77, 77, 77, 1);
+            border-radius: 15px ;
+        }
+
+        .color_div{
+            background-color: red;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .buttons{
+            width: 350px;
+            height: 50px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        button{
+            width: 140px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 0 15px;
+            background-color: rgb(4, 4, 93);
+            color: white;
+        }
+
+        button:hover{
+            cursor: pointer;
+            transform: translateY(-4px);
+            box-shadow: 0px 12px 30px 5px rgb(164, 164, 156);
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .shape_div{
+            background-color: white;
+            width: 120px;
+            height: 120px;
+            clip-path: ellipse(25% 40% at 50% 50%);
+            color: purple;
+        }
+
+        @media (max-width: 1080px){
+            .container_div{
+                width: 1500px;
+                height: 1000px;
+            }
+
+            .buttons{
+                border: 2px solid red;
+                width: 100%;
+                height: 15%;
+            }
+
+            button{
+                width: 300px;
+                height: 150px;
+                font-size: 35px;
+            }
+
+            .color_div{
+                width: 500px;
+                height: 500px;
+            }
+
+            .shape_div{
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container_div">
+            <div class="color_div">
+                <div class="shape_div"></div>
+            </div>
+            <div class="buttons">
+                <button id="btn_color">Change Color</button>
+                <button id="shape_btn">Change Shape</button>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
