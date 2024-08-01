@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            overflow: hidden;
+        }
+
+        section{
+            background-color:lavenderblush;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .content{
+            width: 50%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .initial_text{
+            font-size: 50px;
+            font-weight: bold;
+            color: rgb(6, 69, 179);
+            padding: 2.8%;
+            box-shadow: 0px 2px 20px rgb(28, 82, 199);
+            border-radius: 20px;
+        }
+
+        .key_pressed{
+            font-size: 52px;
+            padding: 2%;
+            border-radius: 10px;
+            color: rgb(2, 186, 2);
+            box-shadow: 0px 2px 35px rgb(35, 208, 35);
+            display: none;
+        }
+
+        .key_pressed .key_name{
+            color: rgb(21, 128, 21);
+        }
+
+        .content .key_code{
+            margin-top: 60px;
+            font-size: 80px;
+            padding: 2%;
+            border-radius: 10px;
+            color: rgb(21, 128, 21);
+            box-shadow: 0px 2px 35px rgb(35, 208, 35);
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="content">
+            <h1 class="key_pressed">You Pressed "<span class="key_name"></span>"</h1>
+            <h1 class="initial_text">Press any Key on Keyboard</h1>
+            <p class="key_code"></p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
