@@ -3,6 +3,7 @@ let btns = document.querySelector(".btns");
 let search_field = document.querySelector(".search_field");
 let popup = document.querySelector(".popup");
 let copybtn = document.querySelector(".copy_button");
+let closeBtn = document.querySelector(".close_btn");
 let popupEmoji = document.querySelector(".popup_emoji");
 
 search_field.addEventListener("keyup", (e) => {
@@ -34,45 +35,31 @@ function displayEmojis(searchQuery = " ") {
     let emoji_div = document.createElement("div");
     emoji_div.innerText = emoji.emoji;
     emoji_div.style.cursor = "pointer";
-    emoji_div.classList.add("emojiis")
     dynamic_div.appendChild(emoji_div);
 
-    // emoji_div.addEventListener('click', (e) => {
-    //     navigator.clipboard.writeText(e.target.innerText);
-    //     alert(`${e.target.innerText} copied to clipboard!`);
-    // });
-
-    //
-
-    //     navigator.clipboard.writeText(emoji.emoji);
-    //     popupEmoji.innerText = emoji.emoji;
-    //     console.log(emoji.emoji);
-    //     e.target.innerText = "Copied to Clipboard!";
-    //     setTimeout(()=>{
-    //         popup.classList.remove('anima');
-    //     }, 1700)
-    // })
-    // emoji_div.addEventListener('click', () =>{
-    //     popup.classList.add('anima');
-    //     copybtn.innerText = "Click to copy on Clipboard!";
-    //     popupEmoji.innerText = emoji.emoji;
-    // })
+    emoji_div.addEventListener('click', () =>{
+        popup.classList.add('openanima');
+        copybtn.innerText = "Click to copy on Clipboard!📋";
+        popupEmoji.innerText = emoji.emoji;
+    })
   });
 }
 
-// function copyButton() {
+copybtn.addEventListener("click", (e) => {
+    let emoji = popupEmoji.innerText;
+    navigator.clipboard.writeText(emoji);
+    e.target.innerText = "Copied to Clipboard! 🤌❤️‍🔥";
+        setTimeout(()=>{
+            popup.classList.remove('openanima');
+        }, 800)
+});
 
-// }
-
-
-let divEmoji = document.querySelector(".emojiis");
-console.log(divEmoji);
-
-copybtn.addEventListener("click", () => {
-    console.log('copy');
-  navigator.clipboard.writeText(popupEmoji.innerText);
-  alert(`${popupEmoji.innerText} copied to clipboard!`);
-  console.log("button");
+closeBtn.addEventListener('click', ()=>{
+    popup.classList.add('closeanima');
+    setTimeout(() => {
+        popup.classList.remove('openanima')
+        popup.classList.remove('closeanima')
+    }, 499);
 });
 
 window.addEventListener("load", () => displayEmojis());
