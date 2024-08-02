@@ -59,7 +59,7 @@ closeBtn.addEventListener('click', ()=>{
     setTimeout(() => {
         popup.classList.remove('openanima')
         popup.classList.remove('closeanima')
-    }, 499);
+    }, 500);
 });
 
 window.addEventListener("load", () => displayEmojis());
