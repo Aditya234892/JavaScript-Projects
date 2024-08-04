@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 40px;
+        }
+
+        .sec-1{
+            border: 8px solid rgb(255, 84, 84);
+            flex-direction: column;
+            width: 50%;
+            height: 80vh;
+            padding: 20px;
+        }
+
+        .product-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 30px;
+        }
+
+        h1{
+            font-size: 40px;
+        }
+
+        .Product-1, .Product-2, .Product-3{
+            background-color: aquamarine;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 30%;
+            padding: 0 8px;
+
+            p{
+                font-size: 23px;
+                font-weight: 600;
+            }
+        }
+
+        .counter{
+            
+            width: 100px;
+            display: flex;
+            align-items: center;
+            p{
+                background-color: aqua;
+                border: 2px solid blue;
+                border-left: none;
+                border-right: none;
+                padding: 4px 15px;
+                width: 55px;
+                font-weight: 400;
+                display: flex;
+                justify-content: center;
+            }
+            button{
+                background-color: cyan;
+                padding: 2.8px 0;
+                font-size: 25px;
+                width: 25px;
+                cursor: pointer;
+            }
+        }
+
+        .minus-btn{
+            border: 2px solid blue;
+            border-right: none;
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+
+        .plus-btn{
+            border: 2px solid blue;
+            border-left: none;
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+
+        .sec-2{
+            border: 8px solid red;
+            width: 40%;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .Cart-container{
+            margin-top: 28px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+
+        .Carts{
+            background-color: rgb(90, 90, 222);
+            width: 100%;
+            height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 50% ;
+            font-size: 23px;
+            font-weight: 600;
+        }
+
+        .Cart-total{
+            background-color: rgb(70, 70, 197);
+            width: 100%;
+            height: 23%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 43%;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="sec-1">
+        <div class="product-container">
+            <h1>Products</h1>
+            <div class="Product-1">
+                <p>Product-1</p>
+                <p>100</p>
+                <div class="counter">
+                    <button class="minus-btn" id="m1">-</button>
+                    <p class="p1-counter">0</p>
+                    <button class="plus-btn"
+                    id="p1">+</button>
+                </div>
+            </div>
+            <div class="Product-2">
+                <p>Product-2</p>
+                <p>200</p>
+                <div class="counter">
+                    <button class="minus-btn" id="m2">-</button>
+                    <p class="p2-counter">0</p>
+                    <button class="plus-btn"
+                    id="p2">+</button>
+                </div>
+            </div>
+            <div class="Product-3">
+                <p>Product-3</p>
+                <p>300</p>
+                <div class="counter">
+                    <button class="minus-btn"
+                    id="m3">-</button>
+                    <p class="p3-counter">0</p>
+                    <button class="plus-btn"
+                    id="p3">+</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-2">
+        <h1>Cart</h1>
+        <div class="Cart-container">
+
+        </div>
+
+        <div class="Cart-total">
+            <h2 id="total-price">No Product added to the cart</h2> 
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
