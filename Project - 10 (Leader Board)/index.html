@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="static">
+        <h1>LeaderBoard</h1>
+        <div class="inputs">
+            <form action="">
+                <input type="text" class="fn" placeholder="First Name">
+                <input type="text" class="ln" placeholder="Last Name">
+                <input type="text" class="country" placeholder="Country">
+                <input type="number" class="score" placeholder="Score">
+                <button type="button" class="add">Add Contestant</button>
+        </form>
+        </div>
+        <!-- <input type="text" class="search" placeholder="Search"> -->
+    </section>
+
+    <hr>
+
+    <section class="dynamic">
+        <div class="board">
+            <table>
+                <thead>
+                    <tr class="details">
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Country</th>
+                        <th>Score</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard">
+                    <!-- Data will be dynamically inserted here -->
+                     <!-- <tr>
+                        <td>Aditya</td>
+                        <td>Mishra</td>
+                        <td>India</td>
+                        <td>498</td>
+                        <td class="btns"> 
+                            <button class="minus-5">-5</button>
+                            <button class="add-5">+5</button>
+                            <button class="trash">🗑️</button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
