@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Matemasie&family=Pacifico&family=Playwrite+AR:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    overflow-x: hidden;
+    position: relative;
+    /* bottom: 100px; */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(245, 235, 220);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.added_items{
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    background-color: #D62300;
+    width: 150px;
+    height: 150px;
+    z-index: 5;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 15px 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    span{
+        background-color: #D62300;
+    }
+    p{
+        background-color: #D62300;
+    }
+}
+
+
+header{
+    width: 100vw;
+    height: 8vh;
+    border-bottom: 1.6px solid gainsboro;
+    position: fixed;
+    top: 0;
+    i{
+        background-color: transparent;
+    }
+}
+
+
+header ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* border: 2px solid red; */
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    /* column-gap: 37%; */
+}
+
+header img{
+    width: 45px;
+}
+
+li button{
+    padding: 8px 12px;
+    border: none;
+    background-color: #D62300;
+    border-radius: 15px;
+    font-weight: 600;
+    color: white;
+}
+
+main{
+    margin-top: 80px;
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro{
+    width: 98%;
+    height: 60%;
+    /* border: 2px solid red; */
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.opening{
+    /* border: 2px solid red; */
+    width: 350px;
+    height: 280px;
+    font-size: 26px;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+.opening h1{
+    color: #502314;
+    /* border: 2px solid red; */
+}
+
+.opening button{
+    width: 80%;
+    font-size: 18px;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 35px
+}
+
+.opening .btn1{
+    border: none;
+    background-color: #D62300;
+    font-weight: 700;
+}
+
+.opening .btn1:hover{
+    background-color: #691403;
+    color: white;
+    cursor: pointer;
+}
+
+.opening .btn2:hover{
+    background-color: #e99786;
+    color: white;
+    cursor: pointer;
+}
+
+.opening .btn2{
+    border: 2px solid #D62300;
+    background-color: #D623001A;
+    color: #D62300;
+}
+
+.opening i{
+    background-color: transparent;
+}
+
+.gif{
+    /* border: 2px solid green; */
+    width: 660px;
+}
+
+.gif img{
+    width: 650px;
+}
+
+
+.menu{
+    margin: 150px auto 0 auto;
+    /* border: 2px solid red; */
+    width: 85%;
+    height: 150%;
+    display: flex   ;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.drinks, .fries, .burger, .taco{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 80px;
+    width: fit-content;
+    height: 680px;
+    p{
+        width: 480px;
+        padding: 5px 10px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    button{
+        width: 180px;
+        padding: 6px 10px;
+        border-radius: 15px;
+        border: 2px solid #D62300;
+        background-color: #f1d9d4;
+        color:#D62300;
+        font-size: 16px;
+        font-weight: 600;
+        &:hover{
+            background-color: #D62300;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease ;
+        }
+    }
+}
+
+.menu img{
+    /* border: 2px solid brown; */
+    width: 500px;
+    height: 450px;
+    border-radius: 10px;
+}
+
+
+.order_btn{
+    width: 500px;
+    /* margin: 0 auto 0 auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order_btn button{
+    width: 60%;
+    padding: 10px 12px;
+    border-radius: 40px;
+    border: none;
+    margin-bottom: 85px;
+    background-color: #D62300;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 6px 15px #e99786;
+}
+
+.order_btn button:hover{
+    background-color: #b62609;
+    transform: translateY(-5px);
+    box-shadow: 0px 9px 22px #e4492a;
+    transition: all 0.3s ease;
+}
+
+.dynamic{
+    /* border: 2px solid red; */
+    margin-bottom: 100px;
+    width: 90vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.show_order{
+    /* border: 2px solid red; */
+    width: 85%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px;
+}
+
+.show_order .burger{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+
+.show_order .burger p{
+    /* border: 2px solid green; */
+    width: fit-content;
+}
+
+.show_order img{
+    width: 400px;
+    border-radius: 15px;
+}
+/* 
+.msgs{
+    width: 100%;
+    height: fit-content;
+    border: 2px solid red;
+} */
+
+#msg-id{
+    text-align: center;
+    span{   
+        color: red;
+    }
+}
+
+
+/* Footer */
+footer{
+    width: 100vw;
+    height: 9vh;
+    border: 1px solid gainsboro;
+    position: fixed;
+    bottom: 0px;
+}
+
+footer ul{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color:#502314;
+}
+
+footer li{
+    display: flex;
+    flex-direction:  column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer span{
+    margin-top: 7px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+footer li:hover{
+    cursor: pointer;
+    color: #D62300;
+}
