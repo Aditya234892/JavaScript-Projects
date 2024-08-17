@@ -2,7 +2,7 @@ let btn = document.querySelector('button');
 let jokeDiv = document.querySelector('.jokes');
 async function fetchData(){
     try{
-    jokeDiv.textContent = "Dady is making a joke for you, Please wait..."
+    jokeDiv.innerHTML = `<h3>Daddy is making a joke for you, Please wait...</h3>`
     let response = await fetch("https://icanhazdadjoke.com/", {
         headers: {
             'Accept': 'text/plain'
