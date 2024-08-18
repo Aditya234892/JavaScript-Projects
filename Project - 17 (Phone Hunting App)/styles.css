@@ -238,7 +238,8 @@ footer span{
     /* border: 2px solid red; */
     display: none;
     z-index: 5;
-    padding-top: 35px;
+    /* padding-top: 35px; */
+
 }
 
 .popup .details{
@@ -254,7 +255,7 @@ footer span{
     margin: 20px auto;
     padding: 25px;
     border-radius: 25px;
-    row-gap: 15px;
+    row-gap: 10px;
     color: white;
 }
 
