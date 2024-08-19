@@ -59,12 +59,16 @@ async function fetchPokemonOnType() {
     const parsedResponse = await response.json();
     const sprites = parsedResponse.sprites;
     const img = sprites.other.dream_world.front_default;
+    const back = sprites.other.showdown.back_default;
+    // console.log(back);
+    
     const hp = parsedResponse.stats[0].base_stat;
     // const hpVal = hp.base_stat;
-    console.log(hp);
+    // console.log(hp);
     const obj = {
       name: pokename,
       image: img,
+      backImg: back,
       hp: hp,
       types: parsedResponse.types.map((ele) => {
         // const {name} = ele.type;
@@ -93,7 +97,7 @@ function searchPokemon() {
 function displaySearchResults(results) {
   list.innerHTML = "";
   results.forEach((ele) => {
-    console.log("Creating card for", ele.name);
+    // console.log("Creating card for", ele.name);
     const main = document.createElement("div");
     main.classList.add("main");
     const themeColor = typeColor[ele.types[0]];
@@ -140,7 +144,7 @@ function displaySearchResults(results) {
       main.style.background = `radial-gradient(circle at 50% 0%, ${themeColor} 36%, #ffffff 36%)`;
       // colorElement.style.backgroundColor = themeColor;
     });
-    console.log("Appending card to list");
+    // console.log("Appending card to list");
     list.append(main);
   });
 }
@@ -180,7 +184,7 @@ function resetPokemon() {
   pokemonCard.length = 0;
   onloadFunction();
 }
-console.log(pokemonCard);
+// console.log(pokemonCard);
 
 window.addEventListener("load", onloadFunction);
 search.addEventListener("keyup", searchPokemon);
