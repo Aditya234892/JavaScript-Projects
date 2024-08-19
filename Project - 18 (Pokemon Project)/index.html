@@ -8,17 +8,18 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 </head>
 
 <body onload="fetchPokenmonType()">
 
     <div class="heading">
-        <img src="images/pikachu.gif" alt="" class="pikachu">
-        <img src="images/Pokédex_logo.png" alt="" id="logo">
-        <img src="images/charmander.gif" alt="" width="180" class="char">
+        <img src="images/pikachu.gif" alt="" class="pikachu animate__animated animate__zoomInLeft">
+        <img src="images/Pokédex_logo.png" alt="" id="logo" class=" animate__animated animate__zoomInDown animate__delay-0.5s">
+        <img src="images/charmander.gif" alt="" width="180" class="char animate__animated animate__zoomInRight">
     </div>
-    <div class="input">
+    <div class="input animate__animated animate__fadeIn">
         <select id="pokemon-types">
             <option value="" selected disabled hidden>Choose the type..</option>
         </select>

@@ -93,22 +93,26 @@ function searchPokemon() {
 function displaySearchResults(results) {
   list.innerHTML = "";
   results.forEach((ele) => {
-    const card = document.createElement("div");
-    card.classList.add("card")
-
+    console.log("Creating card for", ele.name);
+    const main = document.createElement("div");
+    main.classList.add("main");
     const themeColor = typeColor[ele.types[0]];
     // console.log(themeColor)
-    card.innerHTML = `
-          <p class="hp">
+    main.innerHTML = `
+    <div class="card">
+  <div class="front">
+    <p class="hp">
             <span>HP</span>
               ${ele.hp}
           </p>
           <img src=${ele.image} />
           <h2 class="poke-name">${ele.name}</h2>
           <div class="types">
-
           </div>
-          <div class="stats">
+  </div>
+  <div class="back">
+    <img src="${ele.backImg}">
+    <div class="stats">
             <div>
               <h3>${ele.attack}</h3>
               <p>Attack</p>
@@ -122,19 +126,22 @@ function displaySearchResults(results) {
               <p>Speed</p>
             </div>
           </div>
+  </div>
+</div>
     `;
     ele.types.forEach((item) => {
       let span = document.createElement("SPAN");
       span.textContent = item;
       span.style.backgroundColor = typeColor[item]; // Set the background color of the span
-      card.querySelector(".types").appendChild(span);
+      main.querySelector(".types").appendChild(span);
     });
-    const colorElements = card.querySelectorAll(".types span");
+    const colorElements = main.querySelectorAll(".types span");
     colorElements.forEach((colorElement) => {
-      card.style.background = `radial-gradient(circle at 50% 0%, ${themeColor} 36%, #ffffff 36%)`;
+      main.style.background = `radial-gradient(circle at 50% 0%, ${themeColor} 36%, #ffffff 36%)`;
       // colorElement.style.backgroundColor = themeColor;
     });
-    list.append(card);
+    console.log("Appending card to list");
+    list.append(main);
   });
 }
 
@@ -145,9 +152,13 @@ async function onloadFunction() {
     const nameOfPokemon = parseRes.name;
     const sprites = parseRes.sprites;
     const img = sprites.other.dream_world.front_default;
+    console.log(parseRes);
+    
+    const back = sprites.other.showdown.back_default;
     const pokeObj = {
       name: nameOfPokemon,
       image: img,
+      backImg: back,
       hp: parseRes.stats[0].base_stat,
       types: parseRes.types.map((ele) => {
         const { name } = ele.type;
