@@ -1,4 +1,4 @@
-let apiKey = "74MWoF9BNZUFx0tp5P-3-WLPxR_MmZS95b65wL2mQ1I";
+let apiKey = "MwZfuj4Fxd65Vup0TW7svhHUiHcgBECeh21OqG0dYDM";
 let count = 20;
 
 let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
