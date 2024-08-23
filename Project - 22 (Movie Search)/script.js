@@ -16,9 +16,9 @@ movieName.addEventListener("input", function () {
 
 async function searchMovie(query) {
     movieName.value = "";
-    let response = await fetch(`http://www.omdbapi.com/?apikey=${apikey}&s=${query}`);
+    let response = await fetch(`https://www.omdbapi.com/?apikey=${apikey}&s=${query}`);
     let data = await response.json();
-    // console.log(data);
+    console.log(data);
     displayMovies(data);
     
 }
