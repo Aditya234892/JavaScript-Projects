@@ -21,6 +21,9 @@ body {
     background-color: #0a1642;
     /* padding: 20px; */
     overflow: hidden;
+    animation-name: shadow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
 }
 
 .app-title {
@@ -41,11 +44,32 @@ body {
     background-color: #333333;
     color: #ffffff;
     margin-bottom: 10px;
-    border: 2px solid #5340ff;
+    /* box-shadow: 0px 8px 20px blue; */
+    transition: all 0.3s ease;
+    animation-name: shadow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shadow{
+    0%{
+        box-shadow: 0px 8px 20px blue;
+        border: 2px solid #5340ff;
+    }
+    50%{
+        box-shadow: 0px 5px 15px rgb(255, 0, 0);
+        border: 2px solid red;
+    }
+    100%{
+        box-shadow: 0px 8px 20px blue;
+        border: 2px solid #5340ff;
+    }
 }
 
 #movie-name:focus{
     border: 2px solid red;
+    transform: translate(-15px);
+    box-shadow: 0px 16px 20px red;
 }
 
 #search-btn {
