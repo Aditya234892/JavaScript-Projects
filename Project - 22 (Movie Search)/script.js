@@ -1,28 +1,23 @@
-let apikey = `8d645742`;
+let apikey = `3a50c3e3`;
 let movieName = document.getElementById("movie-name");
 let searchBtn = document.getElementById("search-btn");
 let result = document.getElementById("result");
 let debounceTimeout;
 
 searchBtn.addEventListener("click", function () {
-    if (movieName.value.trim().length <= 0) {
-        result.innerHTML = `<h1 class="msg">Please search for something..</h1>`;
-    } else {
-        searchMovie(movieName.value.trim());
-    }
-});
-
-movieName.addEventListener("input", function () {
+    result.innerHTML = `<h1 class="msg">Searching..</h1>`;
     clearTimeout(debounceTimeout);
     debounceTimeout = setTimeout(() => {
-        if (movieName.value.trim().length > 0) {
+        if (movieName.value.trim().length <= 0) {
+            result.innerHTML = `<h1 class="msg">Please search for something..</h1>`;
+        } else {
             searchMovie(movieName.value.trim());
         }
-    }, 800);
+    }, 800); // Applied Debouncing
 });
 
+
 async function searchMovie(query) {
-    result.innerHTML = `<h1 class="msg">Searching..</h1>`;
     movieName.value = "";
     let response = await fetch(`http://www.omdbapi.com/?apikey=${apikey}&s=${query}`);
     let data = await response.json();
@@ -45,7 +40,12 @@ function displayMovies(data) {
     } else {
         result.innerHTML = `<h3 class="msg">${data.Error}</h3>`;
     }
+    // document.querySelector('.details-btn').addEventListener("click", () => youtubrApiCall());
 }
+
+// async function youtubrApiCall(){
+//     let res = await fetch('https://www.googleapis.com/youtube/v3/${search}')
+// }
 
 async function viewDetails(imdbID, index) {
     let response = await fetch(`http://www.omdbapi.com/?apikey=${apikey}&i=${imdbID}`);
