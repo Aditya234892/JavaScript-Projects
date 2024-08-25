@@ -60,6 +60,9 @@ header ul{
     justify-content: space-around;
     align-items: center;
     /* column-gap: 37%; */
+    li{
+        cursor: pointer;
+    }
 }
 
 header img{
@@ -73,6 +76,7 @@ li button{
     border-radius: 15px;
     font-weight: 600;
     color: white;
+    cursor: pointer;
 }
 
 main{

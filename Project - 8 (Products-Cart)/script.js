@@ -14,7 +14,9 @@ let counter_3 = 0;
 
 counter_div.forEach(ele => {
     ele.addEventListener('click', (e) => {
+        
         let btn_clicked = e.target.id;
+        // console.log(btn_clicked);
         if (btn_clicked === 'p1') {
             counter_1++;
             p1_counter.innerText = counter_1;
@@ -35,12 +37,12 @@ counter_div.forEach(ele => {
             counter_1--;
             p1_counter.innerText = counter_1;
         }
-        if(btn_clicked === 'm2' && counter_2 > 0)
+        else if(btn_clicked === 'm2' && counter_2 > 0)
         {
             counter_2--;
             p2_counter.innerText = counter_2;
         }
-        if(btn_clicked === 'm3' && counter_3 > 0)
+        else if(btn_clicked === 'm3' && counter_3 > 0)
         {
             counter_3--;
             p3_counter.innerText = counter_3;
@@ -75,7 +77,7 @@ counter_div.forEach(ele => {
             ans += counter_2 * 200;
             ans += counter_3 * 300;
 
-            total.innerText = ans;
+            // total.innerText = ans;
             cart_total.innerHTML = `<h1>Total Price:</h1>
             <h1>${ans}</h1>`;
         }

@@ -97,11 +97,9 @@ function searchPokemon() {
 function displaySearchResults(results) {
   list.innerHTML = "";
   results.forEach((ele) => {
-    // console.log("Creating card for", ele.name);
     const main = document.createElement("div");
     main.classList.add("main");
     const themeColor = typeColor[ele.types[0]];
-    // console.log(themeColor)
     main.innerHTML = `
     <div class="card">
   <div class="front">
@@ -131,8 +129,7 @@ function displaySearchResults(results) {
             </div>
           </div>
   </div>
-</div>
-    `;
+</div>`;
     ele.types.forEach((item) => {
       let span = document.createElement("SPAN");
       span.textContent = item;
@@ -141,7 +138,7 @@ function displaySearchResults(results) {
     });
     const colorElements = main.querySelectorAll(".types span");
     colorElements.forEach((colorElement) => {
-      main.style.background = `radial-gradient(circle at 50% 0%, ${themeColor} 36%, #ffffff 36%)`;
+      main.style.background = `radial-gradient(circle at 50% 0%, ${themeColor} 40%, #FFC0CB 80%)`;
       // colorElement.style.backgroundColor = themeColor;
     });
     // console.log("Appending card to list");
@@ -189,3 +186,16 @@ function resetPokemon() {
 window.addEventListener("load", onloadFunction);
 search.addEventListener("keyup", searchPokemon);
 reset.addEventListener("click", resetPokemon);
+
+//Button Ripple Effect
+const btn = document.querySelector('a');
+// console.log(btn);
+
+btn.addEventListener("mouseover", (e) => {
+  const rect = btn.getBoundingClientRect();
+  const x = e.pageX - rect.left;
+  const y = e.pageY - rect.top;
+
+  btn.style.setProperty("--xPos", x + "px");
+  btn.style.setProperty("--yPos", y + "px");
+});

@@ -9,18 +9,9 @@ let Fimg = document.querySelector('.Fimg');
 let order = document.querySelector('.order');
 let show = document.querySelector('.show_order');
 let body = document.querySelector('body');
-// let item = document.querySelector('.item');
-// let bag = document.querySelector('.added_items')
-// let msg = document.getElementById('msg-id');
 let msgs = document.querySelector('.msgs')
-// console.log(document.querySelector('.show_order .msg'));
-// let src = Timg.getAttribute('src');
-
-// console.log(Bimg, Timg, Dimg, Fimg);
-// console.log(Bbtn, Tbtn, Fbtn,  Dbtn);
 
 let cart = [];
-// let c = 0;
 Bbtn.addEventListener('click', () => {
   cart.push('Burger');
   console.log(cart);
@@ -31,7 +22,6 @@ Bbtn.addEventListener('click', () => {
   setTimeout(function(){
     Bbtn.textContent = "Add again";
   }, 1800)
-  // c++;
 });
 
 Dbtn.addEventListener('click', () => {
@@ -44,7 +34,6 @@ Dbtn.addEventListener('click', () => {
   setTimeout(function(){
     Dbtn.textContent = "Add again";
   }, 1800)
-  // c++;
 });
 
 Fbtn.addEventListener('click', () => {
@@ -57,7 +46,6 @@ Fbtn.addEventListener('click', () => {
   setTimeout(function(){
     Fbtn.textContent = "Add again";
   }, 1800)
-  // c++;
 });
 
 Tbtn.addEventListener('click', (e) => {
@@ -70,22 +58,15 @@ Tbtn.addEventListener('click', (e) => {
   setTimeout(function(){
     Tbtn.textContent = "Add again";
   }, 1800)
-  // c++;
 });
 
-// function notification(){
-//   let bag = `<div class="added_items">
-//   <p>Items added in Cart <span class="item">${counter}</span></p> 
-// </div>`;
-
-//   body += bag;
-// }
 
 order.addEventListener('click', (e)=>{
   if(cart == '')
   {
     let data = `<h1 style ="color: #502314">Add Something to cart first.</h1>`
     show.innerHTML = data;
+    msgs.innerHTML  = '';
     return;
   }
   let Ddiv = '';
@@ -135,16 +116,22 @@ order.addEventListener('click', (e)=>{
     msgs.innerHTML += data;
   }, 4000);
 
+  let orderNumber = generateRandomNumber();
+
   setTimeout(function(){
     msgs.innerHTML = '';
     show.innerHTML += Bdiv + Tdiv + Ddiv + Fdiv;
-    // console.log(msg); 
-    // msg.style.display = "block";
     let msg = `<h1 id="msg-id" style ="color: #502314">
                         <i class="fa-solid fa-check-circle"></i>
-                        Your order has been placed successfully. Your order number is <span>4631</span>. Please check your email for further instructions.
-                    </h1>`;
+                        Your order has been placed successfully. Your order number is <span>${orderNumber}</span>. Please check your email for further instructions.
+                </h1>`;
     msgs.innerHTML += msg;
+    cart = [];
   }, 6000);
 });
+
+function generateRandomNumber(){
+  return Math.floor(Math.random() * 1000) + 1;
+}
+
 
