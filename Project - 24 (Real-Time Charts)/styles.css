@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 183, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div{
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 15px;
+  }
+
+  div  h1{
+    text-align: center;
+    padding: 10px;
+  }
+
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
