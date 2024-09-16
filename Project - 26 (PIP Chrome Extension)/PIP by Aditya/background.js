@@ -1,8 +1,9 @@
-chrome.action.onClicked.addListener((tab) => {
-    console.log("Working!!");
+chrome.action.onClicked.addListener(async (tab) => {
+    console.log("Working!!", tab);
     const files = ["script.js"];
-    chrome.scripting.executeScript({
+   await chrome.scripting.executeScript({
         target: { tabId: tab.id, allFrames: true },
+        // files: ["script.js"]
         files: files
     });
 });
